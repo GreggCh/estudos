@@ -1,0 +1,22 @@
+**17/03/2020**
+
+Segundo dia que me dedico mais profundamente ao docker, timestampdb e grafana.
+Foi um dia de bastante evolução, mas muitas dúvidas...
+
+O que alcancei hoje:
+  criei uma database no timestampdb chamada iottest
+  criei tabelas de sensores simulados nessa db
+  criei um usuário chamado grafanareader com password grafana para o acesso aos dados via grafana
+  vinculei a database do timescaledb (que, na verdade é postgresql) no grafana
+  criei um gráfico simples
+  
+Problemas encontrados e resolvidos:
+  Não compreendia como funcionava para acessar as imagens no docker. Pois, uma coisa é você mandar rodar uma imagem que tem acesso via
+  navegador, como o grafana, e outra coisa é rodar uma imagem que precisa de configurações via console.
+  Descobri o comando docker exec, pelo o qual consegui acessar a imagem da timescaledb pelo bash. Comando "docker exec -it timescaledb bash"
+  Acessando o timescaledb é necessário acessar o postgres via "su postgres" e, então "psql" para conectar ao servidor psql.
+  No grafana, não conseguia acessar o database, portanto tive que dar permissões ao usuário grafanareader.
+  
+Dúvidas:
+  Ainda não entendi o conceito de schema, o qual é presente no postgres. Não parei para estudar ainda isso, também...
+  
